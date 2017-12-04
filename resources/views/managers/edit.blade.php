@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
-@section('title', '| Создать')
+@section('title', '| Изменить')
 
 @section('content')
 
 <h1 class = "text-center">
 <a href = "{{ route('managers.index') }}" class = "btn btn-large btn-primary pull-left"><span class = "glyphicon glyphicon-arrow-left"></span></a>
-{{ __('app.create') }}</h1>
+{{ __('app.change') }}</h1>
 <hr>
 
-{{ Form::open(['route' => 'managers.store', 'class' => 'form-horizontal', 'files' => 'true']) }}
+{{ Form::model($manager, ['route' => ['managers.update', $manager->id], 'method'=> 'PUT', 'class' => 'form-horizontal', 'files' => 'true']) }}
 	
 
 	<div class="row">
@@ -31,9 +31,9 @@
 			</div>
 
 			<div class = "form-group">
-				{{ Form::label('admission_uz', 'Кабул кунлари:', ['class' => 'col-md-2'])}}
+				{{ Form::label('admission_days_uz', 'Кабул кунлари:', ['class' => 'col-md-2'])}}
 				<div class = "col-md-10">
-					{{ Form::text('admission_uz', null, ['class' => 'form-control'])}}
+					{{ Form::text('admission_days_uz', null, ['class' => 'form-control'])}}
 				</div>
 			</div>
 		</div>
@@ -55,9 +55,9 @@
 			</div>
 
 			<div class = "form-group">
-				{{ Form::label('admission_ru', 'Даты приема:', ['class' => 'col-md-2'])}}
+				{{ Form::label('admission_days_ru', 'Даты приема:', ['class' => 'col-md-2'])}}
 				<div class = "col-md-10">
-					{{ Form::text('admission_ru', null, ['class' => 'form-control'])}}
+					{{ Form::text('admission_days_ru', null, ['class' => 'form-control'])}}
 				</div>
 			</div>
 		</div>
@@ -93,14 +93,14 @@
 		<div class = "col-md-11">
 			<select name="city_id" class = "form-control">
 				@foreach($cities as $city)
-				<option value = "{{ $city->id }}"> {{ $city->name_uz }}</option>
+				<option value = "{{ $city->id }}" {{ $manager->city->id == $city->id ? "selected" : ""}}> {{ $city->name_uz }}</option>
 				@endforeach
 			</select>
 		</div>
 	</div>
 
 
-	{{ Form::submit( __('app.create'), ['class' => 'btn btn-success btn-lg btn-block'])}}
+	{{ Form::submit( __('app.change'), ['class' => 'btn btn-success btn-lg btn-block'])}}
 	
 	
 	

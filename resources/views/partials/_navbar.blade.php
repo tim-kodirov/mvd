@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand my-main-brand" href="{{ route('main') }}"><span class = "glyphicon glyphicon-home"></span></a>
+      <a class="navbar-brand" href="{{ route('main') }}">{{ __('app.nav_main') }} </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,9 +30,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ __('app.nav_expert') }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{ route('expert', 1) }}">{{ __('app.expert_main') }}</a></li>
-            <li role="separator" class="divider"></li>
             <li><a href="{{ route('expert', 2) }}">{{ __('app.expert_contact') }}</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ route('expert', 1) }}">{{ __('app.expert_main') }}</a></li>
+            
+            
           </ul>
         </li>
         <li><a href="{{ route('documents') }}">{{ __('app.nav_documents') }}</a></li>
@@ -56,9 +58,7 @@
             <li><a href="#">Меъёрий хужжатлар лойихалари</a></li>
           </ul>
         </li> -->
-        <li><a href="{{ route('news', 0) }}">{{ __('app.nav_news') }}</a></li>
-        <li><a href="{{ route('questions') }}">{{ __('app.nav_questions') }}</a></li>
-        <li><a href="{{ route('gallery', 0) }}">{{ __('app.nav_gallery') }}</a></li>
+        <li><a href="{{ route('library') }}">{{ __('app.library') }}</a></li>
       </ul>
       <!-- <form class="navbar-form navbar-right">
       <div class="form-group" >

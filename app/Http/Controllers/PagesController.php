@@ -10,7 +10,9 @@ use App\Video;
 use App\Category;
 use App\Wanted;
 use App\Question;
-
+use App\Library;
+use App\City;
+use App\Manager;
 
 class PagesController extends Controller
 {
@@ -40,14 +42,21 @@ class PagesController extends Controller
 		return view('news_single')->withNews($news);
 	}
 
-	public function getDepartment($id)
+	public function getDepartment(Request $request, $id)
 	{
 		switch ($id) {
 			case 1:
 				return view('department.history');
 				break;
 			case 2:
-				return view('department.management');
+				$region_id = $request->has('region') ? $request->region : City::first()->id;
+
+		        $city = City::find($region_id);
+		        $cities = City::all();
+
+		        $managers = Manager::where('city_id', $region_id)->get();
+
+				return view('department.management')->withManagers($managers)->withCities($cities)->with('selectedCity', $city);
 				break;
 			case 3:
 				return view('department.system');
@@ -156,6 +165,13 @@ class PagesController extends Controller
     	}
 
     	return $events;
+    }
+
+    public function getLibrary()
+    {
+    	$libraries = Library::orderBy('id', 'DESC')->paginate(30);
+
+    	return view('library')->withLibraries($libraries);
     }
 
     public function setLanguage(Request $request)

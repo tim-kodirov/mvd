@@ -4,7 +4,7 @@
     <div class = "container">
       <div class="row">
         <div class="col-sm-4 col-xs-6">
-          <h3>{{ __('app.dep_name') }}</h3>
+          <h3>{{ __('app.dep_name_part_1') }} {{ __('app.dep_name_part_2') }}</h3>
           <p>Индекс 000001</p>
           <p>г. Ташкент, р. Мирзо Улугбек, ул. Зиелилар, 9</p>
           <p>Тел: +998 71 289-99-99</p>
@@ -34,7 +34,7 @@
             <li><a href="{{ route('department', 0) }}">{{ __('app.nav_department') }}</a></li>
             <li><a href="{{ route('documents') }}">{{ __('app.nav_documents') }}</a></li>
             <li><a href="{{ route('gallery', 0) }}">{{ __('app.nav_gallery') }}</a></li>
-            <li><a href="{{ route('expert', 1) }}">{{ __('app.nav_functions') }}</a></li>
+            <li><a href="{{ route('expert', 1) }}">{{ __('app.nav_expert') }}</a></li>
           </ul>
           
           

@@ -10,8 +10,8 @@
 @section('content')
 
 <ul class="nav nav-pills">
-  <li class="active"><a data-toggle="tab" href="#menu1">{{ __('app.photos') }}</a></li>
-  <li><a data-toggle="tab" href="#menu2">{{ __('app.videos') }}</a></li>
+  <li class="active"><a data-toggle="tab" href="#menu1"><b> ФОТО </b></a></li>
+  <li><a data-toggle="tab" href="#menu2"><b> ВИДЕО </b></a></li>
 </ul>
 <br>
 <div class="tab-content" >
@@ -59,14 +59,13 @@
   </div>
 </div>
 
-<h2>{{ __('app.interactive_services') }}</h2>
 @if(Session::has('question_sent'))
-  <div class="alert alert-success">
+  <div class="alert alert-success margin-top-20">
     {{ Session::get('question_sent') }}
   </div>
 @endif
 @if(count($errors) > 0)
-<div class="alert alert-danger">
+<div class="alert alert-danger margin-top-20">
   <ul>
     @foreach($errors as $error)
     <li> {{ $error }}</li>
@@ -74,14 +73,22 @@
   </ul>
 </div>
 @endif
-<div class="alert alert-info text-center">
+<div class="alert alert-info text-center margin-top-20">
   <div class="row">
     <div class = "col-sm-4 btn-grp">
       <button data-toggle="modal" data-target="#myModal" class="btn btn-darkblue btn-lg btn-block" role="button">{{ __('app.online_service') }}</button>
     </div>
 
     <div class = "col-sm-4 btn-grp">
-      <button data-toggle="modal" data-target="#myDateModal" class="btn btn-darkblue btn-lg btn-block" role="button">{{ __('app.admission_service') }}</button>
+      <div class="dropdown no-padding">
+        <button data-toggle="dropdown" class="btn btn-darkblue btn-lg btn-block">{{ __('app.admission_service') }} <span class="caret"></span></button>
+
+        <ul class="dropdown-menu">
+          <li><a data-toggle = "modal" href="#myDateModal_1" role = "button">{{ __('app.department_managers') }}</a></li>
+          <li><a data-toggle = "modal" href="#myDateModal_2" role = "button">{{ __('app.region_managers') }}</a></li>
+        </ul>
+      </div>
+      
     </div>
 
     <div class = "col-sm-4 btn-grp">
@@ -124,8 +131,23 @@
           <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="901234567">
         </div>
         <div class="form-group">
+          <label for="address">Адресc:</label>
+          <input type="text" class="form-control" id="address" name="address">
+        </div>
+        <div class="form-group">
           <label for="question">{{ __('app.question') }}:</label>
           <textarea class="form-control" rows="5" id="question" name="question"></textarea>
+        </div>
+        <div class="form-group">
+          <label class = "radio-inline">
+            <input type="radio" name="is_citizen" value = "1" checked>
+            {{ __('app.citizen_question') }}
+          </label>
+
+          <label class = "radio-inline">
+            <input type="radio" name="is_citizen" value = "0">
+            {{ __('app.employee_question') }}
+          </label>
         </div>
       </div>
       <div class="modal-footer">
@@ -137,7 +159,69 @@
   </div>
 </div>
 
-<div class="modal fade" id="myDateModal" role="dialog">
+<div class="modal fade" id="myDateModal_1" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{ __('app.admission_service') }}</h4>
+      </div>
+      <div class="modal-body">
+        <table class = "table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Лавозими</th>
+              <th>Ф.И.Ш</th>
+              <th>Кабул кунлари</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+
+            <tr>
+              <td>Ички Ишлар Вазирлиги вазири</td>
+              <td>Азизов Абдусалом Абдумавлянович</td>
+              <td>Душанба, 10.00 дан 12.00 гача</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="modal fade" id="myDateModal_2" role="dialog">
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -200,8 +284,8 @@
 </div>
   
 <h2>
-<p class = "pull-right all-news-link margin-top-20"><a href="{{ route('news', 0) }}">{{ __('app.all_news') }}</a></p>
-{{ __('app.nav_news') }}
+<p class = "pull-right all-news-link margin-top-20"><a href="{{ route('news', 0) }}"><b>{{ __('app.all_news') }}</b></a></p>
+<b>{{ mb_strtoupper(__('app.nav_news')) }}</b>
 </h2>
 <hr>
 <div class="row">
@@ -230,8 +314,8 @@
 
 
 <h2>
-<p class = "pull-right margin-top-20 all-news-link"><a href="{{ route('news', 1) }}">{{ __('app.all_news') }}</a></p>
-{{ __('app.nav_news_dep') }}
+<p class = "pull-right margin-top-20 all-news-link"><a href="{{ route('news', 1) }}"><b>{{ __('app.all_news') }}</b></a></p>
+<b>{{ mb_strtoupper(__('app.nav_news_dep')) }}</b>
 </h2>
 <hr>
 <div class="row">

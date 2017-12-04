@@ -1,61 +1,144 @@
-<h3 class = "text-center">{{ __('app.useful_links') }}</h3>
-<div class = "well">
+<h3 class = "text-center links-header">{{ __('app.useful_links') }}</h3>
+<div class = "well well-sm margin-top-30">
 <div class = "row">
-  <div class = "col-sm-3">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
     <div class = "image-place text-center">
-      <img src="{{ asset("images/gerb.png")}}" width = "80%" height="80%">
+      <span class="helper"></span>
+      <img src="{{ asset("images/icons/icon_0.png")}}">
+      <span class="helper"></span>
     </div>
   </div>
 
-  <div class = "col-sm-9">
-    <h4>
-      <a href="#">Ўзбекистон Республикаси Президентининг расмий веб-сайти</a>
-    </h4>
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="http://president.uz/"><strong>{{ __('app.link_1') }}</strong></a>
+    </h5>
   </div>
 </div>
 </div>
-<div class = "well">
+
+<div class = "well well-sm">
 <div class = "row">
-  <div class = "col-sm-3">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
     <div class = "image-place text-center">
-      <img src="{{asset("images/lex.png")}}" width = "80%" height="80%">
+      <span class="helper"></span>
+      <img src="{{ asset("images/icons/icon_1.png")}}">
+      <span class="helper"></span>
     </div>
   </div>
 
-  <div class = "col-sm-9">
-    <h4>
-      <a href="#">Ўзбекистон Республикаси Қонун ҳужжатлари маълумотлари миллий базаси</a>
-    </h4>
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="https://pm.gov.uz/"><strong>{{ __('app.link_2') }}</strong></a>
+    </h5>
   </div>
 </div>
 </div>
-<div class = "well">
+
+<div class = "well well-sm">
 <div class = "row">
-  <div class = "col-sm-3">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
     <div class = "image-place text-center">
-      <img src="{{ asset("images/strategy.png")}}">
+      <span class = "helper"></span>
+      <img src="{{ asset("images/icons/icon_2.png")}}">
+      <span class="helper"></span>
     </div>
   </div>
 
-  <div class = "col-sm-9">
-    <h4>
-      <a href="#">Ривожлантиришнинг бешта устувор йўналиши бўйича Ҳаракатлар стратегияси</a>
-    </h4>
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="https://www.gov.uz/"><strong>{{ __('app.link_3') }}</strong></a>
+    </h5>
   </div>
 </div>
 </div>
-<div class = "well">
+
+<div class = "well well-sm">
 <div class = "row">
-  <div class = "col-sm-3">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
     <div class = "image-place text-center">
-      <img src="{{ asset("images/portal.png")}}">
+      <span class = "helper"></span>
+      <img src="{{ asset("images/icons/icon_3.png")}}">
+      <span class="helper"></span>
     </div>
   </div>
 
-  <div class = "col-sm-9">
-    <h4>
-      <a href="#">Ягона интерактив давлат хизматлари портали</a>
-    </h4>
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="https://data.gov.uz/"><strong>{{ __('app.link_4') }}</strong></a>
+    </h5>
+  </div>
+</div>
+</div>
+
+<div class = "well well-sm">
+<div class = "row">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
+    <div class = "image-place text-center">
+      <span class = "helper"></span>
+      <img src="{{ asset("images/icons/icon_4.png")}}">
+      <span class="helper"></span>
+    </div>
+  </div>
+
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="http://strategy.uz"><strong>{{ __('app.link_5') }}</strong></a>
+    </h5>
+  </div>
+</div>
+</div>
+
+<div class = "well well-sm">
+<div class = "row">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
+    <div class = "image-place text-center">
+      <span class="helper"></span>
+      <img src="{{asset("images/icons/icon_5.png")}}">
+      <span class="helper"></span>
+    </div>
+  </div>
+
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="http://lex.uz/"><strong>{{ __('app.link_6') }}</strong></a>
+    </h5>
+  </div>
+</div>
+</div>
+
+<div class = "well well-sm">
+<div class = "row">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
+    <div class = "image-place text-center">
+      <span class="helper"></span>
+      <img src="{{ asset("images/icons/icon_6.png")}}">
+      <span class="helper"></span>
+    </div>
+  </div>
+
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="https://my.gov.uz/"><strong>{{ __('app.link_7') }}</strong></a>
+    </h5>
+  </div>
+</div>
+</div>
+
+<div class = "well well-sm">
+<div class = "row">
+  <div class = "col-md-3 col-sm-4 col-xs-2">
+    <div class = "image-place text-center">
+      <span class="helper"></span>
+      <img src="{{ asset("images/icons/icon_7.png")}}">
+      <span class="helper"></span>
+    </div>
+  </div>
+
+  <div class = "col-md-9 col-sm-8 col-xs-10">
+    <h5>
+      <a href="https://regulation.gov.uz/"><strong>{{ __('app.link_8') }}</strong></a>
+    </h5>
   </div>
 </div>
 </div>

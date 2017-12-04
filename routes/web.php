@@ -42,7 +42,8 @@ Route::get('/questions', 'PagesController@getQuestions')->name('questions');
 
 //gallery
 Route::get('/gallery/{id}', 'PagesController@getGallery')->name('gallery')->where('id', '[{0,1}?]');
-
+//library
+Route::get('/library', 'PagesController@getLibrary')->name('library');
 
 Auth::routes();
 
@@ -74,7 +75,12 @@ Route::prefix('admin')->group(function(){
 	Route::post('questions/answer/{id}', 'Auth\QuestionsController@setAnswer')->name('questions.answer');
  	Route::resource('questions', 'Auth\QuestionsController');
  	
+ 	//managers resource
  	Route::resource('managers', 'Auth\ManagersController');
  	
+ 	//libraries resource
+ 	Route::resource('library', 'Auth\LibraryController');
+
+
 	Route::get('/', 'Auth\AdminController@index');
 });
